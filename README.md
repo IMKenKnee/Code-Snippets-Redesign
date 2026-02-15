@@ -12,6 +12,7 @@ A user-friendly educations website showcasing **"Code Snippets"** for learning d
 4. [Wireframes](#wireframes)
 5. [User Stories](#user-stories)
 6. [Use Case Diagram](#use-case-diagram) 
+7. [Software Requirements](#software-requirements) 
 
 ---
 
@@ -109,3 +110,16 @@ Below are **five** user stories examples demonstrating how different users could
 -The user reads and gains insight into the snippet’s efficiency to decide if it is appropriate for their use case.  
 **Postconditions:** The user understands the snippet’s complexity and potential limitations.  
 **Exceptions:** If no time complexity data is provided for a snippet, show a placeholder or “Under Review” text.  
+
+---
+
+## Software Requirements
+Below are **five** requirement examples demonstrating software requirements that need to be met for user functionality:  
+
+| ID | Requirement |
+|----|-------------|
+| R1 | The system shall display a list of code snippets associated with a selected category. |
+| R2 | The system shall display the snippet title, formatted code block, and explanation text on snippet detail page. |
+| R3 | The system shall return a list of snippet titles, descriptions, or tags to on submitted keyword queries. |
+| R4 | The system shall filter snippets based on selected programming language when applicable. |
+| R5 | The system shall display an error message when no matching snippet is found. |  
