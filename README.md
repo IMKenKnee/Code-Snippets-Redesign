@@ -13,7 +13,8 @@ A user-friendly educations website showcasing **"Code Snippets"** for learning d
 5. [User Stories](#user-stories)
 6. [Use Case Diagram](#use-case-diagram) 
 7. [Software Requirements](#software-requirements) 
-
+8. [Entity Relationship Diagram (ERD)](#entity-relationship-diagram-erd) 
+9. [UML Class Diagram](#uml-class-diagram) 
 ---
 
 ## **Overview**  
@@ -123,3 +124,43 @@ Below are **five** requirement examples demonstrating software requirements that
 | R3 | The system shall return a list of snippet titles, descriptions, or tags to on submitted keyword queries. |
 | R4 | The system shall filter snippets based on selected programming language when applicable. |
 | R5 | The system shall display an error message when no matching snippet is found. |  
+
+---
+
+## Entity Relationship Diagram (ERD)
+![Entity Relationship Diagram](Images/ERD.png)
+
+The conceptual database design was developed using Chen notation. The ERD identifies entities, attributes, relationships, and cardinality relevant to the Code Snippets domain. 
+
+Key design elements include: 
+
+- One-to-many relationship between Category and Snippet 
+- One-to-many relationship between Snippet and SnippetCode 
+- One-to-many relationship between Language and SnippetCode 
+- One-to-many relationship between Snippet and Comment 
+- One-to-many relationship between Snippet and MediaAsset 
+- Many-to-many relationship between Snippet and Tag implemented through the join entity SnippetTag 
+
+---
+
+## UML Class Diagram
+![UML Class Diagram](Images/UML.png) 
+
+The UML Class Diagram illustrates the software implementation of the conceptual ERD within an ASP.NET Core MVC architecture. 
+
+The diagram models: 
+
+- Domain entities (Models) 
+- ViewModels for presentation 
+- Controllers for HTTP request handling 
+- Service layer abstractions using interfaces 
+- Application DbContext for data persistence 
+
+The many-to-many relationship between Snippet and Tag is implemented via the join entity SnippetTag with a composite primary key (SnippetId, TagId). 
+
+Architectural layers are separated as follows: 
+
+- Models: Domain and EF Core entities 
+- ViewModels: Presentation-layer data shaping 
+- Controllers: MVC request endpoints 
+- Services: Business logic and data access abstraction 
