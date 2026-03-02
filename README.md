@@ -13,8 +13,9 @@ A user-friendly educations website showcasing **"Code Snippets"** for learning d
 5. [User Stories](#user-stories)
 6. [Use Case Diagram](#use-case-diagram) 
 7. [Software Requirements](#software-requirements) 
+8. [Technical Stack](#tech-stack) 
 8. [Entity Relationship Diagram (ERD)](#entity-relationship-diagram-erd) 
-9. [UML Class Diagram](#uml-class-diagram) 
+10. [UML Class Diagram](#uml-class-diagram) 
 ---
 
 ## **Overview**  
@@ -124,6 +125,16 @@ Below are **five** requirement examples demonstrating software requirements that
 | R3 | The system shall return a list of snippet titles, descriptions, or tags to on submitted keyword queries. |
 | R4 | The system shall filter snippets based on selected programming language when applicable. |
 | R5 | The system shall display an error message when no matching snippet is found. |  
+
+---
+
+## Tech Stack 
+
+- ASP.NET Core MVC 
+- Entity Framework Core 
+- SQL-based relational database (Subject to change during scope refinement) 
+- RESTful API endpoints 
+- Layered architecture (Controller: Service: DbContext: Database) 
 
 ---
 
