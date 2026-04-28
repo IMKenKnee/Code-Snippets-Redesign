@@ -1,0 +1,30 @@
+@model List<CodeSnippets2.Models.Category>
+@{
+    ViewData["Title"] = "Categories";
+}
+
+<section class="py-16 bg-white dark:bg-gray-900">
+    <div class="max-w-6xl mx-auto px-4">
+        <h1 class="text-3xl font-bold text-center mb-12">Categories</h1>
+
+        <div class="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
+            @foreach (var cat in Model)
+            {
+                <div class="bg-white dark:bg-gray-800 rounded-lg shadow hover:shadow-xl hover:scale-105 transform transition">
+                    <div class="bg-gradient-to-r from-blue-500 to-indigo-600 h-1 rounded-t"></div>
+                    <div class="p-6">
+                        <h2 class="text-xl font-semibold mb-2">@cat.Name</h2>
+                        <p class="text-sm text-gray-600 dark:text-gray-300 mb-4">@cat.Description</p>
+
+                        <a asp-controller="Categories"
+                           asp-action="Details"
+                           asp-route-id="@cat.Id"
+                           class="text-blue-600 hover:underline text-sm">
+                            View Category →
+                        </a>
+                    </div>
+                </div>
+            }
+        </div>
+    </div>
+</section>

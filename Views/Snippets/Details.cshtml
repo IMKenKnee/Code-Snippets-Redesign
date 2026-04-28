@@ -1,0 +1,65 @@
+@model CodeSnippets2.Models.Snippet
+@{
+    ViewData["Title"] = Model.Title;
+}
+
+<header class="bg-blue-600 dark:bg-indigo-900 text-white text-center py-12">
+    <h1 class="text-4xl font-extrabold mb-2">@Model.Title</h1>
+    <p class="text-lg">@Model.Description</p>
+</header>
+
+<main class="max-w-4xl mx-auto px-4 py-12">
+
+    <section class="mb-8">
+        <h2 class="text-2xl font-bold mb-4">Overview</h2>
+
+        <div class="grid gap-4 sm:grid-cols-3">
+            <div class="bg-white dark:bg-gray-800 shadow rounded p-4">
+                <h3 class="font-semibold">Language</h3>
+                <p class="text-gray-600 dark:text-gray-300">@Model.Language</p>
+            </div>
+
+            <div class="bg-white dark:bg-gray-800 shadow rounded p-4">
+                <h3 class="font-semibold">Difficulty</h3>
+                <p class="text-gray-600 dark:text-gray-300">@Model.Difficulty</p>
+            </div>
+
+            <div class="bg-white dark:bg-gray-800 shadow rounded p-4">
+                <h3 class="font-semibold">Complexity</h3>
+                <p class="text-gray-600 dark:text-gray-300">@Model.Complexity</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="mb-8">
+        <h2 class="text-2xl font-bold mb-4">When to Use It</h2>
+        <p class="text-gray-700 dark:text-gray-300">@Model.UseCase</p>
+    </section>
+
+    <section>
+        <h2 class="text-2xl font-bold mb-4">Code Example</h2>
+
+        <div class="rounded-md overflow-hidden shadow-lg">
+            <div class="flex items-center bg-[#1e293b] text-gray-300 text-sm px-4 py-2">
+                <span class="px-3 py-1 rounded-t bg-[#0f172a] text-white font-medium">
+                    @Model.Title
+                </span>
+                <span class="ml-auto text-xs text-green-400">
+                    @Model.Language
+                </span>
+            </div>
+
+            <pre class="bg-[#0c0a1b] text-gray-100 text-sm font-mono p-6 overflow-x-auto"><code>@Model.Code</code></pre>
+        </div>
+    </section>
+
+    <div class="mt-10">
+        <a asp-controller="Categories"
+           asp-action="Details"
+           asp-route-id="@Model.CategoryId"
+           class="text-blue-600 hover:underline">
+            ← Back to Category
+        </a>
+    </div>
+
+</main>

@@ -1,0 +1,38 @@
+# Build output
+bin/
+obj/
+
+# User / IDE files
+.vs/
+.vscode/
+*.user
+*.suo
+*.userosscache
+*.sln.docstates
+
+# Rider
+.idea/
+
+# Logs
+*.log
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# NuGet packages (usually restored automatically)
+packages/
+
+# Publish output
+publish/
+
+# Temporary files
+*.tmp
+*.cache
+
+# Test results
+TestResults/
+
+# Secrets / local config
+appsettings.Development.json
+secrets.json

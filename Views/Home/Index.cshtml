@@ -1,0 +1,45 @@
+﻿@model List<CodeSnippets2.Models.Category>
+@{
+    ViewData["Title"] = "Home";
+}
+
+<header class="bg-gradient-to-br from-sky-700 to-indigo-900 text-white py-20">
+    <div class="max-w-4xl mx-auto px-4 text-center">
+        <h1 class="text-4xl sm:text-5xl font-extrabold mb-4">
+            Master Coding Concepts with Real Snippets
+        </h1>
+        <p class="text-lg mb-6">
+            Explore clean, beginner-friendly examples with explanations and code samples.
+        </p>
+        <a asp-controller="Categories" asp-action="Index"
+           class="bg-white text-blue-700 font-semibold px-6 py-3 rounded shadow hover:bg-gray-100">
+            Browse Snippets
+        </a>
+    </div>
+</header>
+
+<section class="py-16 bg-white dark:bg-gray-900">
+    <div class="max-w-6xl mx-auto px-4">
+        <h2 class="text-3xl font-bold text-center mb-12">Browse Categories</h2>
+
+        <div class="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
+            @foreach (var cat in Model)
+            {
+                <div class="bg-white dark:bg-gray-800 rounded-lg shadow hover:shadow-xl hover:scale-105 transform transition">
+                    <div class="bg-gradient-to-r from-blue-500 to-indigo-600 h-1 rounded-t"></div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold mb-2">@cat.Name</h3>
+                        <p class="text-sm text-gray-600 dark:text-gray-300 mb-4">@cat.Description</p>
+
+                        <a asp-controller="Categories"
+                           asp-action="Details"
+                           asp-route-id="@cat.Id"
+                           class="text-blue-600 hover:underline text-sm">
+                            View Category →
+                        </a>
+                    </div>
+                </div>
+            }
+        </div>
+    </div>
+</section>

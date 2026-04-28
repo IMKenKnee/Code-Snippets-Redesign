@@ -1,0 +1,46 @@
+@model CodeSnippets2.Models.Category
+@{
+    ViewData["Title"] = Model.Name;
+}
+
+<header class="bg-blue-600 dark:bg-indigo-900 text-white text-center py-12">
+    <h1 class="text-4xl font-extrabold mb-2">@Model.Name</h1>
+    <p class="text-lg">@Model.Description</p>
+</header>
+
+<main class="max-w-6xl mx-auto px-4 py-12">
+    <a asp-controller="Categories"
+       asp-action="Index"
+       class="text-blue-600 hover:underline">
+        ← Back to Categories
+    </a>
+
+    <h2 class="text-3xl font-bold mt-10 mb-8">Snippets</h2>
+
+    <div class="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
+        @foreach (var snippet in Model.Snippets)
+        {
+            <div class="bg-white dark:bg-gray-800 rounded-lg shadow hover:shadow-xl hover:scale-105 transform transition">
+                <div class="bg-gradient-to-r from-blue-500 to-indigo-600 h-1 rounded-t"></div>
+
+                <div class="p-6">
+                    <h3 class="text-xl font-semibold mb-2">@snippet.Title</h3>
+                    <p class="text-sm text-gray-600 dark:text-gray-300 mb-4">
+                        @snippet.Description
+                    </p>
+
+                    <p class="text-xs text-gray-500 dark:text-gray-400 mb-2">
+                        @snippet.Language | @snippet.Difficulty
+                    </p>
+
+                    <a asp-controller="Snippets"
+                       asp-action="Details"
+                       asp-route-id="@snippet.Id"
+                       class="text-blue-600 hover:underline text-sm">
+                        View Snippet →
+                    </a>
+                </div>
+            </div>
+        }
+    </div>
+</main>

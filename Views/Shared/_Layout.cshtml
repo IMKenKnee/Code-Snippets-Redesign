@@ -1,0 +1,37 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - CodeSnippets2</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="bg-white text-gray-900 dark:bg-gray-900 dark:text-white font-sans">
+
+<nav class="fixed top-0 left-0 w-full z-50 bg-white dark:bg-gray-800 shadow-md">
+    <div class="max-w-7xl mx-auto px-4 py-4 flex justify-between items-center">
+        <a asp-controller="Home" asp-action="Index" class="flex items-center space-x-2">
+            <img src="/images/logo-solo.svg" alt="CodeSnippets2 Logo" class="h-8 w-auto" />
+            <span class="text-xl font-bold">CodeSnippets2</span>
+        </a>
+
+        <ul class="flex space-x-6 text-sm font-medium">
+            <li><a asp-controller="Home" asp-action="Index" class="hover:text-blue-500">Home</a></li>
+            <li><a asp-controller="Categories" asp-action="Index" class="hover:text-blue-500">Categories</a></li>
+        </ul>
+    </div>
+</nav>
+
+<main class="pt-20 min-h-screen">
+    @RenderBody()
+</main>
+
+<footer class="bg-gray-100 dark:bg-gray-800 text-center py-4 mt-12">
+    <p class="text-sm text-gray-500 dark:text-gray-400">
+        &copy; @DateTime.Now.Year CodeSnippets2
+    </p>
+</footer>
+
+</body>
+</html>
